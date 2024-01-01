@@ -48,7 +48,13 @@ div.nav-container div.sns ul li img {
   height: 30px;
 }
 
+div.container {
+  width: auto;
+  border: 4px solid blue;
+}
+
 div.main {
+  width: 100%;
   border: 4px solid red;
   height: 100vh;
   margin-left: 200px;
@@ -91,4 +97,20 @@ p.big {
 
 .small, .big {
   background-color: #fff;
+}
+
+div.backnumbers {
+  border: 4px solid green;
+  margin-left: 200px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+div.backnumbers .backnumber1, div.backnumbers .backnumber2,
+div.backnumbers .backnumber3,
+div.backnumbers .backnumber4,
+div.backnumbers .backnumber5,
+div.backnumbers .backnumber6 {
+  width: 45%;
+  border: 1px solid red;
 }/*# sourceMappingURL=style.css.map */
