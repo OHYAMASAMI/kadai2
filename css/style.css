@@ -6,6 +6,9 @@
 
 header {
   position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
   width: 200px;
   border: 4px solid red;
   height: 100vh;
@@ -13,10 +16,19 @@ header {
   flex-direction: column;
   justify-content: space-between;
 }
-header img {
+header img.logo {
   width: 150px;
   height: 100px;
   margin-bottom: 30px;
+}
+header .gnav-hidden {
+  display: none;
+}
+header .sp-only {
+  display: none;
+}
+header .sp-only .sp-menu {
+  display: none;
 }
 
 div.nav-container {
@@ -70,6 +82,7 @@ div.back-title {
   border: red 1px solid;
   padding: 50px;
   font-size: 30px;
+  background-color: #f8f8f8;
 }
 
 div.cover {
@@ -86,7 +99,7 @@ div.cover img {
 section.comment {
   position: absolute;
   border: 1px solid red;
-  width: 700px;
+  width: 80%;
   height: 160px;
   left: 60px;
   bottom: 100px;
@@ -101,7 +114,8 @@ p.big {
   font-weight: bold;
 }
 
-.small, .big {
+.small,
+.big {
   background-color: #fff;
 }
 
@@ -111,7 +125,8 @@ div.backnumbers {
   display: flex;
   flex-wrap: wrap;
 }
-div.backnumbers .backnumber1, div.backnumbers .backnumber2,
+div.backnumbers .backnumber1,
+div.backnumbers .backnumber2,
 div.backnumbers .backnumber3,
 div.backnumbers .backnumber4,
 div.backnumbers .backnumber5,
@@ -123,7 +138,8 @@ div.backnumbers .backnumber6 {
   justify-content: space-evenly;
   align-items: center;
 }
-div.backnumbers .backnumber1 div.back-cover, div.backnumbers .backnumber2 div.back-cover,
+div.backnumbers .backnumber1 div.back-cover,
+div.backnumbers .backnumber2 div.back-cover,
 div.backnumbers .backnumber3 div.back-cover,
 div.backnumbers .backnumber4 div.back-cover,
 div.backnumbers .backnumber5 div.back-cover,
@@ -132,7 +148,8 @@ div.backnumbers .backnumber6 div.back-cover {
   width: 60%;
   height: 60%;
 }
-div.backnumbers .backnumber1 div.back-cover img, div.backnumbers .backnumber2 div.back-cover img,
+div.backnumbers .backnumber1 div.back-cover img,
+div.backnumbers .backnumber2 div.back-cover img,
 div.backnumbers .backnumber3 div.back-cover img,
 div.backnumbers .backnumber4 div.back-cover img,
 div.backnumbers .backnumber5 div.back-cover img,
@@ -142,7 +159,8 @@ div.backnumbers .backnumber6 div.back-cover img {
   -o-object-fit: contain;
      object-fit: contain;
 }
-div.backnumbers .backnumber1 .back-comment-all, div.backnumbers .backnumber2 .back-comment-all,
+div.backnumbers .backnumber1 .back-comment-all,
+div.backnumbers .backnumber2 .back-comment-all,
 div.backnumbers .backnumber3 .back-comment-all,
 div.backnumbers .backnumber4 .back-comment-all,
 div.backnumbers .backnumber5 .back-comment-all,
@@ -150,17 +168,99 @@ div.backnumbers .backnumber6 .back-comment-all {
   border: 1px solid red;
   width: 80%;
 }
-div.backnumbers .backnumber1 .back-comment-all .back-date, div.backnumbers .backnumber2 .back-comment-all .back-date,
+div.backnumbers .backnumber1 .back-comment-all .back-date,
+div.backnumbers .backnumber2 .back-comment-all .back-date,
 div.backnumbers .backnumber3 .back-comment-all .back-date,
 div.backnumbers .backnumber4 .back-comment-all .back-date,
 div.backnumbers .backnumber5 .back-comment-all .back-date,
 div.backnumbers .backnumber6 .back-comment-all .back-date {
   font-size: 18px;
 }
-div.backnumbers .backnumber1 .back-comment-all .back-comment, div.backnumbers .backnumber2 .back-comment-all .back-comment,
+div.backnumbers .backnumber1 .back-comment-all .back-comment,
+div.backnumbers .backnumber2 .back-comment-all .back-comment,
 div.backnumbers .backnumber3 .back-comment-all .back-comment,
 div.backnumbers .backnumber4 .back-comment-all .back-comment,
 div.backnumbers .backnumber5 .back-comment-all .back-comment,
 div.backnumbers .backnumber6 .back-comment-all .back-comment {
   font-size: 28px;
+}
+
+div.backnumber1 {
+  background-color: #ecf4f9;
+}
+
+div.backnumber2 {
+  background-color: #fbf3d2;
+}
+
+div.backnumber3 {
+  background-color: #f9f2ed;
+}
+
+div.backnumber4 {
+  background-color: #fae8c2;
+}
+
+div.backnumber5 {
+  background-color: #e2efe7;
+}
+
+div.backnumber6 {
+  background-color: #f2f5fb;
+}
+
+@media screen and (max-width: 768px) {
+  div.nav-container {
+    display: none;
+  }
+  header {
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    background-color: #fff;
+    left: 0;
+    top: 0;
+  }
+  header img.logo {
+    width: 270px;
+    height: 50px;
+    margin-bottom: 0;
+  }
+  header .sp-only {
+    display: block;
+  }
+  header .sp-only #gnav-input:checked ~ .sp-menu {
+    display: block;
+  }
+  header .nav-icon {
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+  }
+  div.container {
+    margin-top: 60px;
+    width: 100vw;
+    height: calc(100vh - 60px);
+    border: 4px solid blue;
+    margin-left: 0;
+  }
+  div.backnumbers .backnumber1,
+  div.backnumbers .backnumber2,
+  div.backnumbers .backnumber3,
+  div.backnumbers .backnumber4,
+  div.backnumbers .backnumber5,
+  div.backnumbers .backnumber6 {
+    width: 100%;
+  }
+  .gnav-hidden {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */
