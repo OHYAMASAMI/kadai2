@@ -12,7 +12,6 @@ header {
     top: 0;
     z-index: 1;
     width: 200px;
-    border: 4px solid red;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -67,13 +66,11 @@ div.nav-container {
 
 div.container {
     width: auto;
-    border: 4px solid blue;
     margin-left: 200px;
 }
 
 div.main {
     width: 100%;
-    border: 4px solid red;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -84,14 +81,13 @@ div.main {
 }
 
 div.back-title {
-    border: red 1px solid;
     padding: 50px;
     font-size: 30px;
     background-color: #f8f8f8;
 }
 
 div.cover {
-    width: 33%;
+    width: 70%;
     height: 80%;
 
     img {
@@ -103,7 +99,6 @@ div.cover {
 
 section.comment {
     position: absolute;
-    border: 1px solid red;
     width: 80%;
     height: 160px;
     left: 60px;
@@ -124,8 +119,6 @@ p.big {
 }
 
 div.backnumbers {
-    border: 4px solid green;
-
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -136,15 +129,13 @@ div.backnumbers {
     .backnumber4,
     .backnumber5,
     .backnumber6 {
-        width: 45%;
-        border: 1px solid red;
+        width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
 
         div.back-cover {
-            border: 1px solid red;
             width: 60%;
             height: 60%;
             img {
@@ -154,7 +145,6 @@ div.backnumbers {
             }
         }
         .back-comment-all {
-            border: 1px solid red;
             width: 80%;
             .back-date {
                 font-size: 18px;
@@ -207,12 +197,56 @@ div.backnumber6 {
         }
         .sp-only {
             display: block;
+            .sp-menu {
+                width: 100vw;
+                height: 100vh;
+            }
             #gnav-input:checked ~ .sp-menu {
-                display: block;
-                
+                position: fixed;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                left: 0;
+                top: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: #fff;
+                nav.menu {
+                    margin-left: 30px;
+                    li {
+                        margin-bottom: 40px;
+                        list-style: none;
+                        margin-bottom: 75px;
+
+                        a {
+                            text-decoration: none;
+                            font-size: 24px;
+                            font-weight: bold;
+                        }
+                        a:hover{
+                            text-decoration:underline;
+                            transition:underline 0.5s ease-out 0s;
+                        }
+                    }
+                }
+                div.sns {
+                    ul {
+                        display: flex;
+                        li {
+                            list-style: none;
+                            margin-right: 20px;
+                            img {
+                                width: 30px;
+                                height: 30px;
+                            }
+                        }
+                    }
+                }
             }
         }
-        .nav-icon {
+        .nav-icon,
+        .nav-icon-close {
             display: block;
             width: 50px;
             height: 50px;
@@ -226,7 +260,6 @@ div.backnumber6 {
         margin-top: 60px;
         width: 100vw;
         height: calc(100vh - 60px);
-        border: 4px solid blue;
         margin-left: 0;
     }
     div.backnumbers {
@@ -238,8 +271,5 @@ div.backnumber6 {
         .backnumber6 {
             width: 100%;
         }
-    }
-    .gnav-hidden {
-        display: none;
     }
 }
