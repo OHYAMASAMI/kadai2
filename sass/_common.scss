@@ -78,6 +78,27 @@ div.main {
     background-size: cover;
     background: url("../img/mv-bg@2x.jpg");
     position: relative;
+    div.date-block {
+        width:300px;
+
+    }
+    div.comment-block {
+        width: 80%;
+       
+    }
+    p.small,
+    p.big-en,
+    .big-jp {
+        background-color: #fff;
+        margin-bottom: 10px;
+        
+    }
+    p.big-en,
+    .big-jp {
+        font-size: max(3.2vw, 2rem);
+        font-weight: bold;
+        line-height: 1em;
+    }
 }
 
 div.back-title {
@@ -178,6 +199,8 @@ div.backnumber6 {
 @media screen and (max-width: 768px) {
     div.nav-container {
         display: none;
+        // box-shadow: 6px 0 25px rgba(0,0,0,0.15);表紙画像にドロップシャドウを設定
+        // transition: 0.3s;
     }
     header {
         width: 100vw;
@@ -224,10 +247,24 @@ div.backnumber6 {
                             font-size: 24px;
                             font-weight: bold;
                         }
-                        a:hover{
-                            text-decoration:underline;
-                            transition:underline 0.5s ease-out 0s;
-                        }
+
+                        // a::after {
+
+                        //     position: absolute;
+                        //     left: 0;
+                        //     content: '';
+                        //     width: 100%;
+                        //     height: 2px;
+                        //     background: #000000;
+                        //     bottom: -1px;               /*アンダーラインがaタグの下端から現れる*/
+                        //     transform: scale(0, 1);     /*アンダーラインの縮尺比率。ホバー前はx方向に0*/
+                        //     transform-origin: left top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の左端*/
+                        //     transition: transform 0.3s; /*変形の時間*/
+                        //     }
+
+                        //     a:hover::after {
+                        //     transform: scale(1, 1);     /*ホバー後、x軸方向に1（相対値）伸長*/
+                        //     }
                     }
                 }
                 div.sns {

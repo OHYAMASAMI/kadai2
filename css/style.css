@@ -74,6 +74,24 @@ div.main {
   background: url("../img/mv-bg@2x.jpg");
   position: relative;
 }
+div.main div.date-block {
+  width: 300px;
+}
+div.main div.comment-block {
+  width: 80%;
+}
+div.main p.small,
+div.main p.big-en,
+div.main .big-jp {
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+div.main p.big-en,
+div.main .big-jp {
+  font-size: max(3.2vw, 2rem);
+  font-weight: bold;
+  line-height: 1em;
+}
 
 div.back-title {
   padding: 50px;
@@ -252,10 +270,6 @@ div.backnumber6 {
     text-decoration: none;
     font-size: 24px;
     font-weight: bold;
-  }
-  header .sp-only #gnav-input:checked ~ .sp-menu nav.menu li a:hover {
-    text-decoration: underline;
-    transition: underline 0.5s ease-out 0s;
   }
   header .sp-only #gnav-input:checked ~ .sp-menu div.sns ul {
     display: flex;
