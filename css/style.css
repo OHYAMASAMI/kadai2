@@ -46,6 +46,24 @@ div.nav-container nav.menu li {
 }
 div.nav-container nav.menu li a {
   text-decoration: none;
+  position: relative;
+  text-decoration: none;
+}
+div.nav-container nav.menu li a::after {
+  position: absolute;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: #000;
+  bottom: -1px;
+  transform: scale(0, 1);
+  transform-origin: right top;
+  transition: transform 0.3s;
+}
+div.nav-container nav.menu li a:hover::after {
+  transform: scale(1, 1);
+  transform-origin: left top;
 }
 div.nav-container div.sns ul {
   display: flex;
@@ -270,6 +288,25 @@ div.backnumber6 {
     text-decoration: none;
     font-size: 24px;
     font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    text-decoration: none;
+  }
+  header .sp-only #gnav-input:checked ~ .sp-menu nav.menu li a::after {
+    position: absolute;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: #000;
+    bottom: -1px;
+    transform: scale(0, 1);
+    transform-origin: right top;
+    transition: transform 0.3s;
+  }
+  header .sp-only #gnav-input:checked ~ .sp-menu nav.menu li a:hover::after {
+    transform: scale(1, 1);
+    transform-origin: left top;
   }
   header .sp-only #gnav-input:checked ~ .sp-menu div.sns ul {
     display: flex;

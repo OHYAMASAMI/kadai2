@@ -46,6 +46,27 @@ div.nav-container {
             list-style: none;
             a {
                 text-decoration: none;
+                position: relative;
+                text-decoration: none;
+            }
+            a::after{
+                position: absolute;
+                left: 0;
+                content:'';
+                width: 100%;
+                height: 2px;
+                background: #000;
+                bottom: -1px;
+                transform: scale(0,1);
+                transform-origin: right top;
+                transition: transform 0.3s;
+            }
+    
+            a:hover::after {
+                transform: scale(1,1);
+                transform-origin: left top;
+            
+            
             }
         }
     }
@@ -98,6 +119,8 @@ div.main {
         font-size: max(3.2vw, 2rem);
         font-weight: bold;
         line-height: 1em;
+       
+        
     }
 }
 
@@ -199,8 +222,7 @@ div.backnumber6 {
 @media screen and (max-width: 768px) {
     div.nav-container {
         display: none;
-        // box-shadow: 6px 0 25px rgba(0,0,0,0.15);表紙画像にドロップシャドウを設定
-        // transition: 0.3s;
+        
     }
     header {
         width: 100vw;
@@ -246,25 +268,32 @@ div.backnumber6 {
                             text-decoration: none;
                             font-size: 24px;
                             font-weight: bold;
-                        }
+                                text-decoration: none;
+                                position: relative;
+                                text-decoration: none;
+                            }
+                            a::after{
+                                position: absolute;
+                                left: 0;
+                                content:'';
+                                width: 100%;
+                                height: 2px;
+                                background: #000;
+                                bottom: -1px;
+                                transform: scale(0,1);
+                                transform-origin: right top;
+                                transition: transform 0.3s;
+                            }
+                    
+                            a:hover::after {
+                                transform: scale(1,1);
+                                transform-origin: left top;
+                            
+                            
+                            }
+                        
 
-                        // a::after {
-
-                        //     position: absolute;
-                        //     left: 0;
-                        //     content: '';
-                        //     width: 100%;
-                        //     height: 2px;
-                        //     background: #000000;
-                        //     bottom: -1px;               /*アンダーラインがaタグの下端から現れる*/
-                        //     transform: scale(0, 1);     /*アンダーラインの縮尺比率。ホバー前はx方向に0*/
-                        //     transform-origin: left top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の左端*/
-                        //     transition: transform 0.3s; /*変形の時間*/
-                        //     }
-
-                        //     a:hover::after {
-                        //     transform: scale(1, 1);     /*ホバー後、x軸方向に1（相対値）伸長*/
-                        //     }
+                        
                     }
                 }
                 div.sns {
