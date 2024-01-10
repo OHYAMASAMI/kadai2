@@ -20,7 +20,7 @@ header {
     img.logo {
         width: 150px;
         height: 100px;
-        margin-bottom: 30px;
+        margin: 0 auto;
     }
     .gnav-hidden {
         display: none;
@@ -39,15 +39,17 @@ div.nav-container {
     justify-content: space-between;
     width: 100%;
     height: 100%;
+    margin-top: 80px;
     nav.menu {
         margin-left: 30px;
         li {
-            margin-bottom: 40px;
+            margin-bottom: 1.5em;
             list-style: none;
             a {
                 text-decoration: none;
                 position: relative;
                 text-decoration: none;
+                color: #000;
             }
             a::after{
                 position: absolute;
@@ -100,25 +102,29 @@ div.main {
     background: url("../img/mv-bg@2x.jpg");
     position: relative;
     div.date-block {
-        width:300px;
+        width:fit-content;
 
     }
     div.comment-block {
-        width: 80%;
+        width: fit-content;
        
     }
-    p.small,
-    p.big-en,
-    .big-jp {
+    p.small-date,
+    p.big-comment-en,
+    .big-comment-jp {
         background-color: #fff;
         margin-bottom: 10px;
         
     }
-    p.big-en,
-    .big-jp {
+    .small-date{
+        width: fit-content;
+        // 文字の外枠の幅を中身にあわせてくれる役割
+    }
+    p.big-comment-en,
+    .big-comment-jp {
         font-size: max(3.2vw, 2rem);
-        font-weight: bold;
-        line-height: 1em;
+        line-height: 1.25em;
+        width: fit-content;
        
         
     }
@@ -126,8 +132,16 @@ div.main {
 
 div.back-title {
     padding: 50px;
-    font-size: 30px;
+    
+    
     background-color: #f8f8f8;
+    h2{
+        font-size: 22px;
+
+    }
+    p{
+        font-size: 14px;
+    }
 }
 
 div.cover {
@@ -141,26 +155,18 @@ div.cover {
     }
 }
 
-section.comment {
+div.comment {
     position: absolute;
     width: 80%;
     height: 160px;
     left: 60px;
     bottom: 100px;
 }
+// .date-block{
+//     transition: width 0.5s ease-out 0s;
+// }
 
-p.small {
-    font-size: 14pt;
-}
 
-p.big {
-    font-size: 36pt;
-    font-weight: bold;
-}
-.small,
-.big {
-    background-color: #fff;
-}
 
 div.backnumbers {
     width: 100%;
@@ -194,7 +200,8 @@ div.backnumbers {
                 font-size: 18px;
             }
             .back-comment {
-                font-size: 28px;
+                font-size: 24px;
+               
             }
         }
     }
@@ -242,11 +249,15 @@ div.backnumber6 {
         }
         .sp-only {
             display: block;
+            
+            #gnav-input:checked ~ .sp-menu {
+                transform: translateX(0);
+            }
             .sp-menu {
                 width: 100vw;
                 height: 100vh;
-            }
-            #gnav-input:checked ~ .sp-menu {
+                transform: translateX(100%);
+                transition: 0.8s cubic-bezier(0.69,0.04,0.15,0.98);
                 position: fixed;
                 display: flex;
                 flex-direction: column;

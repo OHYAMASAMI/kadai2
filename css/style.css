@@ -18,7 +18,7 @@ header {
 header img.logo {
   width: 150px;
   height: 100px;
-  margin-bottom: 30px;
+  margin: 0 auto;
 }
 header .gnav-hidden {
   display: none;
@@ -36,18 +36,20 @@ div.nav-container {
   justify-content: space-between;
   width: 100%;
   height: 100%;
+  margin-top: 80px;
 }
 div.nav-container nav.menu {
   margin-left: 30px;
 }
 div.nav-container nav.menu li {
-  margin-bottom: 40px;
+  margin-bottom: 1.5em;
   list-style: none;
 }
 div.nav-container nav.menu li a {
   text-decoration: none;
   position: relative;
   text-decoration: none;
+  color: #000;
 }
 div.nav-container nav.menu li a::after {
   position: absolute;
@@ -93,28 +95,40 @@ div.main {
   position: relative;
 }
 div.main div.date-block {
-  width: 300px;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 div.main div.comment-block {
-  width: 80%;
+  width: -moz-fit-content;
+  width: fit-content;
 }
-div.main p.small,
-div.main p.big-en,
-div.main .big-jp {
+div.main p.small-date,
+div.main p.big-comment-en,
+div.main .big-comment-jp {
   background-color: #fff;
   margin-bottom: 10px;
 }
-div.main p.big-en,
-div.main .big-jp {
+div.main .small-date {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+div.main p.big-comment-en,
+div.main .big-comment-jp {
   font-size: max(3.2vw, 2rem);
-  font-weight: bold;
-  line-height: 1em;
+  line-height: 1.25em;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 div.back-title {
   padding: 50px;
-  font-size: 30px;
   background-color: #f8f8f8;
+}
+div.back-title h2 {
+  font-size: 22px;
+}
+div.back-title p {
+  font-size: 14px;
 }
 
 div.cover {
@@ -128,26 +142,12 @@ div.cover img {
      object-fit: contain;
 }
 
-section.comment {
+div.comment {
   position: absolute;
   width: 80%;
   height: 160px;
   left: 60px;
   bottom: 100px;
-}
-
-p.small {
-  font-size: 14pt;
-}
-
-p.big {
-  font-size: 36pt;
-  font-weight: bold;
-}
-
-.small,
-.big {
-  background-color: #fff;
 }
 
 div.backnumbers {
@@ -209,7 +209,7 @@ div.backnumbers .backnumber3 .back-comment-all .back-comment,
 div.backnumbers .backnumber4 .back-comment-all .back-comment,
 div.backnumbers .backnumber5 .back-comment-all .back-comment,
 div.backnumbers .backnumber6 .back-comment-all .back-comment {
-  font-size: 28px;
+  font-size: 24px;
 }
 
 div.backnumber1 {
@@ -260,11 +260,14 @@ div.backnumber6 {
   header .sp-only {
     display: block;
   }
+  header .sp-only #gnav-input:checked ~ .sp-menu {
+    transform: translateX(0);
+  }
   header .sp-only .sp-menu {
     width: 100vw;
     height: 100vh;
-  }
-  header .sp-only #gnav-input:checked ~ .sp-menu {
+    transform: translateX(100%);
+    transition: 0.8s cubic-bezier(0.69, 0.04, 0.15, 0.98);
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -276,15 +279,15 @@ div.backnumber6 {
     height: 100vh;
     background-color: #fff;
   }
-  header .sp-only #gnav-input:checked ~ .sp-menu nav.menu {
+  header .sp-only .sp-menu nav.menu {
     margin-left: 30px;
   }
-  header .sp-only #gnav-input:checked ~ .sp-menu nav.menu li {
+  header .sp-only .sp-menu nav.menu li {
     margin-bottom: 40px;
     list-style: none;
     margin-bottom: 75px;
   }
-  header .sp-only #gnav-input:checked ~ .sp-menu nav.menu li a {
+  header .sp-only .sp-menu nav.menu li a {
     text-decoration: none;
     font-size: 24px;
     font-weight: bold;
@@ -292,7 +295,7 @@ div.backnumber6 {
     position: relative;
     text-decoration: none;
   }
-  header .sp-only #gnav-input:checked ~ .sp-menu nav.menu li a::after {
+  header .sp-only .sp-menu nav.menu li a::after {
     position: absolute;
     left: 0;
     content: "";
@@ -304,18 +307,18 @@ div.backnumber6 {
     transform-origin: right top;
     transition: transform 0.3s;
   }
-  header .sp-only #gnav-input:checked ~ .sp-menu nav.menu li a:hover::after {
+  header .sp-only .sp-menu nav.menu li a:hover::after {
     transform: scale(1, 1);
     transform-origin: left top;
   }
-  header .sp-only #gnav-input:checked ~ .sp-menu div.sns ul {
+  header .sp-only .sp-menu div.sns ul {
     display: flex;
   }
-  header .sp-only #gnav-input:checked ~ .sp-menu div.sns ul li {
+  header .sp-only .sp-menu div.sns ul li {
     list-style: none;
     margin-right: 20px;
   }
-  header .sp-only #gnav-input:checked ~ .sp-menu div.sns ul li img {
+  header .sp-only .sp-menu div.sns ul li img {
     width: 30px;
     height: 30px;
   }
