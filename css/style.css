@@ -294,6 +294,7 @@ div.backnumber6 {
     text-decoration: none;
     position: relative;
     text-decoration: none;
+    color: #000;
   }
   header .sp-only .sp-menu nav.menu li a::after {
     position: absolute;
